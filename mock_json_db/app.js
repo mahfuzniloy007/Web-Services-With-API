@@ -2,7 +2,7 @@ const express = require('express');
 const ejs =require('ejs')
 const app = express();
 const userRoutes = require('./routes/users.js');
-requires('dotenv').config();
+require('dotenv').config();
 const PORT = process.env.PORT || 8000;
 
 // Setting up view engine
