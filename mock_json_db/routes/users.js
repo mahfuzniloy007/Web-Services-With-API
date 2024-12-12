@@ -9,12 +9,20 @@ router.use(express.json());
 // Middleware Parse url-encoded strings
 router.use(express.urlencoded({extended: true}));
 
+
+// Create new user route
+router.post("/users", userController.createUser);
+
+// Update user
+router.post("/users/:id/update", userController.updateUser);
+
+// Update user
+router.post("/users/:id/delete", userController.deleteUser);
+
 // Render the view
 router.get('/', (req, res) => {
     res.render("home");
 });
 
-// Create new user route
-router.post("/users", userController.createUser);
 
 module.exports = router;
